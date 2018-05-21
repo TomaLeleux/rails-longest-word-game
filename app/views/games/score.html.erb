@@ -1,0 +1,13 @@
+<h1>Result</h1>
+
+<% if @result[:message] == "Well done" %>
+  <p><strong>Congratulations ! </strong><%= @word.upcase %> is an English word</p>
+<% elsif @result[:message] == "not in the grid" %>
+  <p>Sorry but <%= @word.upcase %> can't be built out of <%= @grid.join %></p>
+<% elsif @result[:message] == "not an english word" %>
+  <p>Sorry but <%= @word.upcase %> does not seems to be a English word</p>
+<% end %>
+
+<div class="link">
+  <%= link_to 'Play again', new_path %>
+</div>
